@@ -219,6 +219,7 @@ function nb_refresh_tx_n() {
                                         if ("addr" in r.out[j]) {
                                             var address = r.out[j].addr;
 
+                                            if (address === addr) continue;
                                             var output = document.getElementById("nb-output");
                                             output.readOnly = true;
                                             output.placeholder = "Bitcoin address will appear here.";
