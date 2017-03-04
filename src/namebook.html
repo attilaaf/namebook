@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>NameBook - Database for Bitcoin Address Handles</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="application-name" content="NameBook" />
+<meta name="description" content="Resolve known names to Bitcoin addresses or reserve them for yourself." />
+<meta name="keywords" content="bitcoin dns, decentralized name system, domain name system, bitcoin address handles" />
+<!-- BEGIN EXTERNAL CSS -->
+<link href="./main.css" rel="stylesheet" type="text/css">
+<!-- END EXTERNAL CSS -->
+
+<style media="screen" type="text/css">
+/* PASTE EXTERNAL CSS HERE */
+</style>
+
+<!-- BEGIN EXTERNAL SCRIPTS -->
+<script src="./lib/cryptojs/core.js"            ></script>
+<script src="./lib/cryptojs/lib-typedarrays.js" ></script>
+<script src="./lib/cryptojs/sha256.js"          ></script>
+<script src="./lib/cryptojs/ripemd160.js"       ></script>
+<script src="./lib/cryptojs/enc-base64.js"      ></script>
+<script src="./lib/bitcoin.js"                  ></script>
+<script src="./lib/sprintf.js"                  ></script>
+
+<script src="./main.js"  charset="UTF-8"></script>
+<script src="./utils.js" charset="UTF-8"></script>
+<!-- END EXTERNAL SCRIPTS -->
+</head>
+<body style="background-color: rgba(224,224,224, 0.5);">
+
+<div id="bc" class="appear">
+    <div style="display: table; width: 100%; height: 100%; table-layout: fixed;">
+        <div style="display: table-row; width: 100%;">
+            <div style="display: inline-block; max-height: 50vh; width: 100%; overflow: hidden;">
+                <div id="nb-header">
+                    <h2 style="display: table-cell; vertical-align: middle;">NameBook</h2>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: table-row; width: 100%; height: 100%;">
+            <div style="width: 100%; height: 100%; position: relative;">
+            <div id="nb-body">
+                <div id="nb-greet" class="nb-view">
+                    <div style="display:table; width: 100%; height: 100%;">
+                        <div style="display:table-cell;vertical-align:middle;">
+                            <div style="margin-left:auto; margin-right:auto;">
+                                <span id="nb-no-script">Please enable JavaScript.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nb-main" class="nb-view nb-hidden-view"></div>
+            </div>
+            </div>
+        </div>
+
+        <div style="display: table-row; width: 100%;">
+            <div style="display: inline-block; max-height: 50vh; width: 100%; overflow: hidden;">
+                <div id="nb-footer">
+                    <a href="https://github.com/1Hyena/namebook/blob/master/LICENSE" title="NameBook MIT License." target="_blank">
+                        <span id="nb-credits">&copy;2017 NameBook Developers</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var noscript = document.getElementById("nb-no-script");
+while (noscript.hasChildNodes()) noscript.removeChild(noscript.lastChild);
+noscript.appendChild(document.createTextNode("⌛"));
+noscript.style.fontSize = "400%";
+noscript.style.opacity = "0.75";
+
+function show_progress(text) {
+    var progress = document.getElementById("cg-progress");
+    while (progress.hasChildNodes()) progress.removeChild(progress.lastChild);
+    progress.appendChild(document.createTextNode(text));
+}
+
+function fade_out() {
+    var cg = document.getElementById("bc");
+    if (cg !== null) {
+        if (cg.classList.contains('appear'))     cg.classList.remove('appear');
+        if (!cg.classList.contains('disappear')) cg.classList.add('disappear');
+    }
+}
+window.onbeforeunload = fade_out;
+</script>
+
+<!-- PASTE EXTERNAL JS HERE -->
+
+<script>
+nb_start();
+</script>
+
+</body>
+</html>

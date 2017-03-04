@@ -1,0 +1,185 @@
+* {margin:0; padding:0;}
+html, body {height:100%; width:100%; font-family: monospace; overflow: hidden;}
+
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:link:active, a:visited:active, a:link:hover, a:visited:hover {
+    color: red;
+}
+
+.nb-borderbox {
+    margin-left: auto; 
+    margin-right: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.appear {
+    opacity: 0;
+    -webkit-animation-name: appear-anim;
+    -webkit-animation-duration: 1s;
+    animation-name: appear-anim;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes appear-anim {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes appear-anim {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.disappear {
+    opacity: 1;
+    -webkit-animation-name: disappear-anim;
+    -webkit-animation-duration: 0.5s;
+    animation-name: disappear-anim;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes disappear-anim {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes disappear-anim {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.nb-symbol {
+    margin-right: 0.125ch;
+    margin-left: 0.125ch;
+}
+
+.nb-container {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.nb-txs-link:link, .nb-txs-link:visited {
+    color: blue;
+}
+
+.nb-view {
+    width: 100%;
+    height: 100%;
+}
+
+.nb-hidden-view {
+    display: none;
+}
+
+.nb-msg {
+    text-align: left;
+    border: 1px solid transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 1ch;
+}
+
+.nb-msg-decoding {
+    border: 1px solid yellow;
+}
+
+.nb-msg-decoded {
+    border: 1px solid transparent;
+}
+
+.nb-msg-failure {
+    border: 1px solid red;
+}
+
+#bc {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#nb-header {
+    display: table;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(224,224,224, 0.5);
+    text-align: center;
+}
+
+#nb-footer {
+    display: table;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(224,224,224, 0.5);
+    text-align: center;
+}
+
+#nb-body {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#nb-input, #nb-hash, #nb-output {
+    max-width: 45ch;
+    width: 100%;
+}
+
+#nb-searchtable {
+    width: calc(100% - 0.125rem);
+    max-width: 30rem;
+    margin: auto;
+}
+
+#nb-table-container {
+    width: calc(100% - 2ch);
+    max-width: 45ch;
+}
+
+#nb-symbols, #nb-cancel {
+    font-size: 300%;
+    width: 2.75ch;
+}
+
+#nb-cancel {
+    text-align: left;
+}
+
+#nb-credits {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#nb-chan-read {
+    height: 85%;
+    max-height: calc(100% - 10ch);
+    overflow: auto;
+}
+
+#nb-chan-write {
+    background-color: rgba(224,224,224, 0.5);
+    min-height: 10ch;
+    height: 15%;
+    padding-top: 1ch;
+    padding-bottom: 1ch;
+}
+
+#nb-chan-write-textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
